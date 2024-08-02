@@ -14,6 +14,7 @@ module.exports = initAdmin = async ()=> {
       phone: "11223344",
       email: "admin@mail.com",
       password: hashed_pwd,
+      adresse : "",
       salt : new_salt,
       role : Role.Admin
     });

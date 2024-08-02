@@ -8,7 +8,8 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
-  phone: { type: String, },
+  phone: { type: String },
+  adresse: { type: String },
   email: {
     type: String,
     required: true,
@@ -16,10 +17,10 @@ const UserSchema = new Schema({
   },
   password: { type: String, required : true },  
   role: {type: String, enum: Object.values(Role)},
-  
   image: { type: String ,default: default_image},
   salt: { type: String, required: true },
-  isEnabled : { type : Boolean , default : false }
+  isEnabled : { type : Boolean , default : false },
+  isDeleted : { type : Boolean , default : false }
 },
 {
   timestamps: true

@@ -55,14 +55,14 @@ module.exports.login = async (req, res, next)=>{
         let fullName = `${firstName} ${lastName}`; 
         const signature = generate_signature({ _id, fullName, email });
 
-        return res.status(200).send({  
+        return res.status(200).send({message : "Authenticated successfully" , data : {  
             token : signature, 
             id : _id, 
             fullName, 
             email, 
             role,
             image 
-        })
+        }})
     } catch (error) {
         next(error)
     }
